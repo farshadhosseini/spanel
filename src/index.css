@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("./styles/fonts.css");
+@import url("./styles/reset.css");
+
+.wrap-container {
+  @apply rounded-2xl;
+  @apply border;
+  @apply m-4;
+  @apply p-4;
+}
+
+.card-container {
+  @apply rounded-lg;
+  @apply border-gray-300;
+  @apply border;
+  @apply m-1;
+  @apply p-4;
+}
