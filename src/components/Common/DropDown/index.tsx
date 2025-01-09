@@ -19,7 +19,7 @@ export const DropDown = () => {
       className="self-end absolute left-4 top-4 cursor-pointer"
       onClick={handleToggle}
     >
-      <FontAwesomeIcon icon={faEllipsisV} size="lg" />
+      <FontAwesomeIcon icon={faEllipsisV} size="xl" />
       {toggle ? (
         <div className="bg-white absolute left-0 p-3 rounded-md shadow-xl w-40 z-10">
           <ul className="text-right text-sm font-light text-gray-500">

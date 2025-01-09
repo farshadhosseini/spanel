@@ -1,14 +1,14 @@
 import { List } from "../components/Content/List";
-import { PageOptions } from "../components/Features/Paginate/PageOptions";
-import { Pages } from "../components/Features/Paginate/Pages";
+import { PageOptions } from "../components/Features/PageOptions";
+import { Paginate } from "../components/Features/Paginate";
 import { MainLayout } from "../components/Layouts/MainLayout";
 
 export const Main: React.FC = (): JSX.Element => {
   return (
     <MainLayout>
-        <PageOptions />
+        <PageOptions toggleMenu={() => {}} />
         <List />
-        <Pages />
+        <Paginate />
     </MainLayout>
   );
 };

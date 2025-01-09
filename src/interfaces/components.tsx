@@ -14,3 +14,7 @@ export interface ITextProps {
   placeholder: string;
   classes?: string;
 }
+
+export interface IPageOptionsProps {
+  toggleMenu: () => void;
+}
