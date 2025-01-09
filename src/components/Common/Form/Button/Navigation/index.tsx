@@ -1,15 +1,8 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { IButtonProps } from "../../../../../interfaces/components";
 
-interface IButton {
-  text: string;
-  icon: IconProp;
-  isAcive?: boolean;
-  classes?: string;
-}
-
-export const Button: React.FC<IButton> = ({
+export const Button: React.FC<IButtonProps> = ({
   text,
   icon,
   isAcive = false,
@@ -21,7 +14,7 @@ export const Button: React.FC<IButton> = ({
         isAcive ? "bg-white/30" : "bg-white/10"
       } hover:bg-white/30 transition-all p-3 w-full rounded-lg ${classes}`}
     >
-      <FontAwesomeIcon icon={icon} />
+      {icon ? <FontAwesomeIcon icon={icon} /> : null}
       {text}
     </button>
   );

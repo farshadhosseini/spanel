@@ -1,12 +1,7 @@
 import React from "react";
+import { ITextProps } from "../../../../interfaces/components";
 
-interface IText {
-  type: "text" | "number" | "password";
-  placeholder: string;
-  classes?: string;
-}
-
-export const Text: React.FC<IText> = ({
+export const Text: React.FC<ITextProps> = ({
   type,
   placeholder,
   classes,
@@ -14,7 +9,7 @@ export const Text: React.FC<IText> = ({
   return (
     <input
       type={type}
-      className={`w-full rounded-lg p-2 outline-none text-black font-light ${classes}`}
+      className={`text-sm w-full rounded-lg p-3 outline-none text-black font-light ${classes}`}
       placeholder={placeholder}
     />
   );

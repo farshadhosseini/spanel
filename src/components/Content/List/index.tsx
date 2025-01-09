@@ -1,23 +1,22 @@
+import { Item } from "./Item";
+
 export const List: React.FC = (): JSX.Element => {
   return (
-    <div className="card-container">
-      ;
-      <ul>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-        <li>fdfds</li>
-      </ul>
+    <div className="m-4">
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
     </div>
   );
 };

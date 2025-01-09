@@ -1,3 +1,3 @@
 export const Pages: React.FC = (): JSX.Element => {
-  return <>pages</>;
+  return <div>pages</div>;
 };

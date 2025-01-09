@@ -9,7 +9,8 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        container: `0px 4px 40px -30px rgba(0, 0, 0, 0.6)`
+        container: `0px 4px 40px -20px rgba(0, 0, 0, 0.6)`,
+        card: `0px 4px 30px -20px rgba(0, 0, 0, 0.7)`
       },
     },
   },

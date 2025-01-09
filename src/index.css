@@ -5,17 +5,26 @@
 @import url("./styles/fonts.css");
 @import url("./styles/reset.css");
 
-.wrap-container {
-  @apply rounded-2xl;
-  @apply border;
-  @apply m-4;
-  @apply p-4;
+.fade-header {
+  position: fixed;
+  height: 10rem;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, white 50%, transparent)
 }
 
-.card-container {
-  @apply rounded-lg;
-  @apply border-gray-300;
-  @apply border;
-  @apply m-1;
+.wrap-container {
+  @apply rounded-xl;
+  @apply m-4;
   @apply p-4;
+  @apply bg-white
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
