@@ -6,31 +6,28 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../../Common/Form/Button/Navigation";
-import { Text } from "../../Common/Form/Text";
+import { Button as ActionButton } from "../../Common/Form/Button/Action";
 import { Profile } from "../Profile";
+import logo from "../../../assets/images/logo.png";
 
 export const Sidebar: React.FC = (): JSX.Element => {
   return (
-    <div className="shadow-container wrap-container overflow-auto bg-gradient-to-r from-blue-600 to-indigo-700 flex-1 text-white">
+    <div className="wrap-container overflow-auto bg-gradient-to-r from-blue-600 to-indigo-800 flex-1 text-white">
       <div className="flex flex-col h-full justify-between">
         <div className="space-y-8">
-          <div className="space-y-3 text-center">
+          <div className="text-center flex items-center flex-col gap-2">
+            <img src={logo} alt="logo" className="w-32" />
             <h2 className="font-extrabold text-4xl">شاتل سرویس</h2>
             <Profile />
-            <Text placeholder="جستجوی سرویس ..." type="text" />
           </div>
           <div className="flex flex-col gap-2">
-            <Button text="حساب کاربری" icon={faUser} isAcive={true} />
+            <Button text="حساب کاربری" icon={faUser} />
             <Button text="افزایش اعتبار" icon={faCoins} />
-            <Button text="سرویس‌های من " icon={faCloudUpload} />
+            <Button text="سرویس‌های من " icon={faCloudUpload} isAcive={true} />
             <Button text="تنظیمات" icon={faCog} />
           </div>
         </div>
-        <Button
-          text="خروج"
-          icon={faSignOut}
-          classes="bg-orange-500 hover:bg-orange-600"
-        />
+        <ActionButton text="خروج" icon={faSignOut} />
       </div>
     </div>
   );

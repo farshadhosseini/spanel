@@ -9,7 +9,7 @@ export const Text: React.FC<ITextProps> = ({
   return (
     <input
       type={type}
-      className={`text-sm w-full rounded-lg p-3 outline-none text-black font-light ${classes}`}
+      className={`text-sm rounded-lg p-2 outline-none text-black font-light ${classes}`}
       placeholder={placeholder}
     />
   );

@@ -6,11 +6,10 @@ export const MainLayout: React.FC<ILayoutProps> = ({
 }): JSX.Element => {
   return (
     <div className="flex font-yekan">
-      <div className="fade-header"></div>
-      <div className="w-1/4 flex h-screen sticky top-0">
+      <div className="w-1/4 md:flex hidden h-screen sticky top-0">
         <Sidebar />
       </div>
-      <div className="w-3/4 flex flex-col">{children}</div>
+      <div className="md:w-3/4 w-full flex flex-col">{children}</div>
     </div>
   );
 };

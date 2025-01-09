@@ -7,7 +7,7 @@
 
 .fade-header {
   position: fixed;
-  height: 10rem;
+  height: 8rem;
   width: 100%;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, white 50%, transparent)
