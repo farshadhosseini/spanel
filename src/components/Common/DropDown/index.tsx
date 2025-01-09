@@ -31,7 +31,7 @@ export const DropDown = () => {
               <FontAwesomeIcon icon={faEdit} />
               ویرایش
             </li>
-            <li className="hover:bg-slate-100 p-2 rounded-md flex gap-2 text-rose-700">
+            <li className="hover:bg-rose-100 p-2 rounded-md flex gap-2 text-rose-700">
               <FontAwesomeIcon icon={faTrash} />
               حذف
             </li>
