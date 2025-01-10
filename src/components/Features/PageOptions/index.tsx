@@ -10,11 +10,11 @@ export const PageOptions: React.FC<IPageOptionsProps> = ({
       <div className="fade-header z-20"></div>
       <div className="wrap-container z-20 sticky top-4 shadow-container flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="flex md:hidden" onClick={toggleMenu}>
+          <span className="flex lg:hidden" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faList} size="lg" />
           </span>
           <span
-            className="bg-orange-300 w-4 h-4 rounded-md animate-pulse hidden md:flex"
+            className="bg-orange-300 w-4 h-4 rounded-md animate-pulse hidden lg:flex"
             id="indicator"
           ></span>
           <h3>سرویس‌های من</h3>

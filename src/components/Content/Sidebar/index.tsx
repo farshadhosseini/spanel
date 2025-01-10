@@ -17,7 +17,7 @@ export const Sidebar: React.FC = (): JSX.Element => {
         <div className="space-y-4">
           <div className="text-center flex items-center flex-col gap-1">
             <img src={logo} alt="logo" className="w-32" />
-            <h2 className="font-extrabold text-4xl">شاتل سرویس</h2>
+            <h2 className="font-extrabold xl:text-4xl lg:text-2xl">شاتل سرویس</h2>
             <Profile />
           </div>
           <div className="flex flex-col gap-2">
