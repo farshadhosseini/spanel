@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../app/store";
 import { setPosts, addPost, removePost, updatePost } from "../../../features/postSlics";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Paginate } from "../../Features/Paginate";
 
 export const List: React.FC = (): JSX.Element => {
   const { posts } = useSelector((state: RootState) => state.posts)
@@ -17,13 +18,13 @@ export const List: React.FC = (): JSX.Element => {
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null);
   const [listUpdate, setListUpdate] = useState<boolean>(false)
-
+  const [page, setPage] = useState<number>(1)
   const newPost = location.state?.post
 
-  const getPosts = async () => {
+  const getPosts = async (currentPage: number) => {
     setLoading(true)
     try {
-      const response = await getPostsReq()
+      const response = await getPostsReq(currentPage)
       if (response.status === HttpStatus.OK.code) {
         dispatch(setPosts(response.data));
       }
@@ -49,12 +50,17 @@ export const List: React.FC = (): JSX.Element => {
     setListUpdate(!listUpdate)
   }
 
+  const changPage = (page: number) => {
+    setPage(page)
+    getPosts(page)
+  }
+
   useEffect(() => {
     if (newPost) {
       dispatch(addPost(newPost))
       navigate("/", { replace: true });
     }
-    if (!posts.length) getPosts()
+    if (!posts.length) getPosts(page)
   }, [listUpdate])
 
   return (
@@ -65,6 +71,7 @@ export const List: React.FC = (): JSX.Element => {
       {!loading && posts.map((post) => {
         return <Item key={post.id} {...post} updateList={updateList} />
       })}
+      {posts.length ? <Paginate page={page} changePage={(page: number) => changPage(page)} /> : null}
     </div>
   );
 };

@@ -27,7 +27,7 @@ export const NewPost = () => {
         try {
             const response = await createPostReq(post)
             if (response.status === HttpStatus.CREATED.code) {
-                navigate('/', { state: { post: response.data }});
+                navigate('/', { state: { post: response.data } });
             }
         } catch (error: any) {
             setError(error.response.data)
@@ -37,7 +37,7 @@ export const NewPost = () => {
     }
 
     return (
-        <div className="wrap-container z-20 sticky top-4 shadow-container flex flex-col gap-2">
+        <div className="wrap-container shadow-container flex flex-col gap-2">
             <Text name="title" type="text" onChange={handleForm} value={post.title} hasLabel={true} label="Title" />
             <TextArea name="body" value={post.body} onChange={handleForm} hasLabel={true} label="Description" />
             <div className="flex self-end text-white">

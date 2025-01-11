@@ -37,8 +37,7 @@ export interface ITextAreaProps {
 }
 
 export interface IPageOptionsProps {
-  title: string,
-  toggleMenu: () => void;
+  title: string
 }
 
 export interface IModalProps extends PropsWithChildren {
@@ -56,4 +55,9 @@ export interface IDropDownProps {
 
 export interface IItem {
   updateList: (action: string, id: number, post?: IPost) => void
+}
+
+export interface IPaginateProps {
+  page: number,
+  changePage: (page: number) => void
 }

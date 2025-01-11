@@ -28,7 +28,7 @@ export const DropDown: React.FC<IDropDownProps> = ({ onAction }): JSX.Element =>
     >
       <FontAwesomeIcon icon={faEllipsisV} size="sm" />
       {toggle ? (
-        <div className="bg-white absolute left-0 p-3 rounded-md shadow-xl w-40 z-10 self-start top-8 border">
+        <div className="bg-white absolute left-0 p-3 rounded-md shadow-xl w-40 self-start top-8 border">
           <ul className="text-right text-sm font-light text-gray-500">
             <li className="hover:bg-slate-100 p-2 rounded-md flex gap-2" onClick={() => handleAction(actionTypes.details)}>
               <FontAwesomeIcon icon={faPaperclip} />

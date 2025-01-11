@@ -5,7 +5,7 @@ import { MainLayout } from "../../../components/Layouts/MainLayout";
 export const Post: React.FC = (): JSX.Element => {
     return (
         <MainLayout>
-            <PageOptions title="سرویس جدید" toggleMenu={() => { }} />
+            <PageOptions title="سرویس جدید" />
             <NewPost />
         </MainLayout>
     );

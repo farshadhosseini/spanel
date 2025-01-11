@@ -5,8 +5,8 @@ export const createPostReq = (post: IPost) => {
   return Axios.post("/posts", post);
 };
 
-export const getPostsReq = () => {
-  return Axios.get("/posts");
+export const getPostsReq = (page: number) => {
+  return Axios.get(`/posts?_page=${page}`);
 };
 
 export const getPostReq = (id: number) => {

@@ -1,14 +1,12 @@
 import { List } from "../components/Content/List";
 import { PageOptions } from "../components/Features/PageOptions";
-import { Paginate } from "../components/Features/Paginate";
 import { MainLayout } from "../components/Layouts/MainLayout";
 
 export const Main: React.FC = (): JSX.Element => {
   return (
       <MainLayout>
-        <PageOptions title="سرویس‌های من" toggleMenu={() => { }} />
+        <PageOptions title="سرویس‌های من" />
         <List />
-        <Paginate />
       </MainLayout>
   );
 };
