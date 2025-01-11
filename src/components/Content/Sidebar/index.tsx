@@ -9,6 +9,7 @@ import { Button } from "../../Common/Form/Button/Navigation";
 import { Button as ActionButton } from "../../Common/Form/Button/Action";
 import { Profile } from "../Profile";
 import logo from "../../../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 export const Sidebar: React.FC = (): JSX.Element => {
   return (
@@ -23,12 +24,14 @@ export const Sidebar: React.FC = (): JSX.Element => {
           <div className="flex flex-col gap-2">
             <Button text="حساب کاربری" icon={faUser} />
             <Button text="افزایش اعتبار" icon={faCoins} />
-            <Button text="سرویس‌های من " icon={faCloudUpload} isAcive={true} />
+            <Link to="/">
+              <Button text="سرویس‌های من " icon={faCloudUpload} isAcive={true} />
+            </Link>
             <Button text="تنظیمات" icon={faCog} />
           </div>
         </div>
         <ActionButton text="خروج" icon={faSignOut} />
       </div>
-    </div>
+    </div >
   );
 };

@@ -1,10 +1,9 @@
 import React from "react";
-import { ITextProps } from "../../../../interfaces/components";
+import { ITextAreaProps } from "../../../../interfaces/components";
 
-export const Text: React.FC<ITextProps> = ({
+export const TextArea: React.FC<ITextAreaProps> = ({
   id,
   name,
-  type,
   value,
   onChange,
   placeholder,
@@ -15,12 +14,12 @@ export const Text: React.FC<ITextProps> = ({
   return (
     <>
       {hasLabel ? <label htmlFor={id}>{label}</label> : null}
-      <input
+      <textarea
         name={name}
+        rows={5}
         id={id}
         value={value}
         onChange={onChange}
-        type={type}
         className={`text-sm rounded-lg p-3 outline-none text-black font-light border ${classes}`}
         placeholder={placeholder}
       /></>
