@@ -23,7 +23,7 @@ export const ToastProvider: React.FC<IToastProps> = ({ children }) => {
     <ToastContext.Provider value={{ showMessage }}>
       {children}
       {show && (
-        <div className="fixed left-4 bottom-4 bg-green-700 py-4 px-6 rounded-md text-white shadow-lg animate-bounce">
+        <div className="font-yekan fixed left-4 bottom-4 bg-green-700 py-4 px-6 rounded-md text-white shadow-lg animate-bounce">
           {message}
         </div>
       )}
