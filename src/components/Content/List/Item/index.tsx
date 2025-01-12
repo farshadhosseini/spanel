@@ -9,16 +9,18 @@ import { HttpStatus } from "../../../../constants/HttpStatusCodes";
 import { Text } from "../../../Common/Form/Text";
 import { TextArea } from "../../../Common/Form/TextArea";
 import { ItemBody } from "./body";
+import { useToast } from "../../../../context/ToastContext";
+import { messages } from "../../../../constants/messages";
 
 export const Item: React.FC<IPost> = ({ id, userId, title, body, updateList }): JSX.Element => {
   const [post, setPost] = useState<IPost>({ id, userId, title, body })
   const [loading, setLoading] = useState<boolean>(false)
-  const [error, setError] = useState<string | null>(null);
   const [modal, dispatch] = useReducer(modalReducer, {
     details: false,
     update: false,
     remove: false,
   })
+  const { showMessage } = useToast()
 
   const removePost = async () => {
     setLoading(true)
@@ -27,9 +29,10 @@ export const Item: React.FC<IPost> = ({ id, userId, title, body, updateList }): 
       if (response.status === HttpStatus.OK.code) {
         updateList && updateList('remove', id!)
         dispatch({ type: 'remove' })
+        showMessage(messages.posts.remove)
       }
     } catch (error: any) {
-      setError(error.response.data)
+      showMessage(messages.posts.request_failed)
     } finally {
       setLoading(false)
     }
@@ -42,9 +45,10 @@ export const Item: React.FC<IPost> = ({ id, userId, title, body, updateList }): 
       if (response.status === HttpStatus.OK.code) {
         updateList && updateList('update', id!, response.data)
         dispatch({ type: 'update' })
+        showMessage(messages.posts.update)
       }
     } catch (error: any) {
-      setError(error.response.data)
+      showMessage(messages.posts.request_failed)
     } finally {
       setLoading(false)
     }

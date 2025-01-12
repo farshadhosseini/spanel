@@ -9,6 +9,7 @@ import { RootState } from "../../../app/store";
 import { setPosts, addPost, removePost, updatePost } from "../../../features/postSlics";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Paginate } from "../../Features/Paginate";
+import { useToast } from "../../../context/ToastContext";
 
 export const List: React.FC = (): JSX.Element => {
   const { posts } = useSelector((state: RootState) => state.posts)
@@ -20,6 +21,7 @@ export const List: React.FC = (): JSX.Element => {
   const [listUpdate, setListUpdate] = useState<boolean>(false)
   const [page, setPage] = useState<number>(1)
   const newPost = location.state?.post
+  const { showMessage } = useToast()
 
   const getPosts = async (currentPage: number) => {
     setLoading(true)
@@ -29,7 +31,7 @@ export const List: React.FC = (): JSX.Element => {
         dispatch(setPosts(response.data));
       }
     } catch (error: any) {
-      setError(error.response.data)
+      setError(messages.posts.failed)
     } finally {
       setLoading(false)
     }
@@ -58,6 +60,7 @@ export const List: React.FC = (): JSX.Element => {
   useEffect(() => {
     if (newPost) {
       dispatch(addPost(newPost))
+      showMessage(messages.posts.create)
       navigate("/", { replace: true });
     }
     if (!posts.length) getPosts(page)
@@ -68,7 +71,7 @@ export const List: React.FC = (): JSX.Element => {
       {loading && <div>{messages.general.loading}</div>}
       {error && <div>{messages.general.error}</div>}
       {!loading && !error && posts.length === 0 && <div>{messages.posts.noContent}</div>}
-      {!loading && posts.map((post) => {
+      {!loading && posts.length && posts.map((post) => {
         return <Item key={post.id} {...post} updateList={updateList} />
       })}
       {posts.length ? <Paginate page={page} changePage={(page: number) => changPage(page)} /> : null}
