@@ -1,4 +1,5 @@
 import { Axios } from "../config/axios.config";
+import { general } from "../constants/config";
 import { IPost } from "../interfaces/posts";
 
 export const createPostReq = (post: IPost) => {
@@ -6,7 +7,7 @@ export const createPostReq = (post: IPost) => {
 };
 
 export const getPostsReq = (page: number) => {
-  return Axios.get(`/posts?_page=${page}`);
+  return Axios.get(`/posts?_page=${page}&_limit=${general.per_page}`);
 };
 
 export const getPostReq = (id: number) => {
